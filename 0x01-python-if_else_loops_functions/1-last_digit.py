@@ -9,8 +9,11 @@ if number < 0:
 else:
     lastdigit = (number) % 10
 if lastdigit == 0:
-    print("Last digit of " + str(number) + " is " + str(lastdigit) + " and is 0")
+    print("Last digit of " + str(number) + " is " + str(lastdigit) +
+    " and is 0")
 elif lastdigit > 5:
-    print("Last digit of " + str(number) + " is " + str(lastdigit) + " and is greater than 5")
+    print("Last digit of " + str(number) + " is " + str(lastdigit) +
+    " and is greater than 5")
 else:
-    print("Last digit of " + str(number) + " is " + str(lastdigit) + " and is less than 6 and not 0")
+    print("Last digit of " + str(number) + " is " + str(lastdigit) +
+    " and is less than 6 and not 0")
