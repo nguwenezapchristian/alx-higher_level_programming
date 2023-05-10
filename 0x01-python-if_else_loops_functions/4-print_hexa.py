@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for hex in range(0, 99):
-    print("{} = {:x}".format(hex, hex))
+    print("{} = 0x{:x}".format(hex, hex))
