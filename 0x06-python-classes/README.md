@@ -1,1 +1,1 @@
-object oriented programming in python using classes
+object oriented programming in python using class
