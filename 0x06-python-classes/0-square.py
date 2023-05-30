@@ -1,6 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    '''empty class'''
-    def square(self):
-        '''does nothing'''
-        pass
+    ''' This is an empty class '''
+    pass
