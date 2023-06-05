@@ -114,4 +114,4 @@ class Rectangle:
         else:
             for i in range(self.__height):
                 rectangle += ("#" * self.__width) + "\n"
-            return rectangle[:1]
+            return rectangle[:-1]
