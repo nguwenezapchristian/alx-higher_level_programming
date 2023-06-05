@@ -12,27 +12,19 @@ class Rectangle:
             width (int): the width of a rectangle
             height (int): the height of a rectangle
         
-        Raises:
-            TypeError: width must be an integer
-            ValueError: width must be >= 0
-            TypeError: height must be an integer
-            ValueError: height must be >= 0
 
         """
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = width
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = height
+        self.width = width
+        self.height = height
     def width(self):
-        """ method to retrieve the width """
+        """ method to retrieve the width
+
+        Returns:
+            width of the rectangle
+
+
+        """
+        
         return self.__width
     @width.setter
     def width(self, value):
@@ -45,7 +37,9 @@ class Rectangle:
             TypeError: width must be an integer
             ValueError: width must be >= 0
 
+        
         """
+        
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -54,7 +48,14 @@ class Rectangle:
             self.__width = value
     @property
     def height(self):
-        """ method to retrieve the height """
+        """ method to retrieve the height
+
+        Returns:
+            height of the rectangle
+
+
+        """
+        
         return self.__height
     @height.setter
     def height(self, value):
@@ -67,7 +68,9 @@ class Rectangle:
             TypeError: height must be an integer
             ValueError: height must be >= 0
 
+
         """
+        
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
