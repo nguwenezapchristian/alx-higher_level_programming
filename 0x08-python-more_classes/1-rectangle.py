@@ -14,8 +14,8 @@ class Rectangle:
         
 
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
     def width(self):
         """ method to retrieve the width
 
