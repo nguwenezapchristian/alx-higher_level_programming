@@ -1,0 +1,94 @@
+=============================
+Doctest for 0-add_integer.py
+=============================
+
+This doctest contain one function, which is called
+``add_integer()``.
+
+Numbers
+=======
+
+The ``add_integer`` returns the sum of its arguments.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+It also works with floating-point values by casting them into integers.
+
+::
+
+    >>> add_integer(100.3, 3)
+    103
+
+It also works with negative values.
+
+::
+
+    >>> add_integer(-2, 3)
+    1
+
+It also works with one value.
+
+::
+
+    >>> add_integer(10)
+    108
+
+It doesn't work with more than two arguments.
+
+::
+
+    >>> add_integer(-2, 3, 10)
+    Traceback (most recent call last):
+        ... 
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+It doesn't work with too large integer
+
+::
+
+    >>> add_integer(1e1000, 2)
+    Traceback (most recent call last):
+        ...
+    OverflowError: a is too large
+
+    >>> add_integer(2, 1e1000)
+    Traceback (most recent call last):
+        ...
+    OverflowError: b is too large
+
+
+Non-Numbers
+===========
+
+The ``add_integer()`` does not work with non numbers like strings
+
+::
+
+    >>> add_integer('a', 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(['A', 'B', 'C'], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, 'c')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer({'a': 10}, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
