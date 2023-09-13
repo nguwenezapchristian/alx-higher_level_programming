@@ -14,6 +14,7 @@ def write_file(filename="", text=""):
 
     Arg:
         filename: the name of the text file
+        text: string to add to a text file
     """
-    with open(filename, 'w', encoding="utf-8") as f:
-        f.write(text)
+    with open(filename, mode='w', encoding="utf-8") as f:
+        return f.write(text)
