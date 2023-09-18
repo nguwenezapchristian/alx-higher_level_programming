@@ -16,7 +16,7 @@ class TestBase(unittest.TestCase):
     """ This a class for Test cases for Base class """
 
     @classmethod
-    def setUpClass(cls):
+    def test_setUpClass(cls):
         """ here i am initializing the __nb_objects
         to zero before starting the test """
 

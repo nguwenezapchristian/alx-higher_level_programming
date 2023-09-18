@@ -112,6 +112,9 @@ class TestRectangle(unittest.TestCase):
         r.x = 4
         self.assertEqual(r.x, 4)
 
+    """
+    Tests for the area method
+    """
     def test_area(self):
         """ test the result of area method """
         r10 = Rectangle(3, 2)
