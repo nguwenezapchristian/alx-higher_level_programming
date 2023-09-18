@@ -1,4 +1,4 @@
-#!/usr/bin/pyethon3
+#!/usr/bin/python3
 
 """
 
@@ -27,7 +27,7 @@ class TestBase(unittest.TestCase):
 
         b1 = Base()
         self.assertEqual(b1.id, 1)
-        b2 = base()
+        b2 = Base()
         self.assertEqual(b2.id, 2)
 
     def test_id_not_none(self):
