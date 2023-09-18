@@ -8,7 +8,7 @@
 
 """
 
-from .base import Base
+from models.base import Base
 class Rectangle(Base):
     """ class rectangle that inherits from Base """
 
