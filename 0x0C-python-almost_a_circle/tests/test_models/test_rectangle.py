@@ -112,5 +112,13 @@ class TestRectangle(unittest.TestCase):
         r.x = 4
         self.assertEqual(r.x, 4)
 
+    def test_area(self):
+        """ test the result of area method """
+        r10 = Rectangle(3, 2)
+        self.assertEqual(r10.area(), 6)
+
+        r11 = Rectangle(2, 10)
+        self.assertEqual(r11.area(), 20)
+
 if __name__ == "__main__":
     unittest.main()
