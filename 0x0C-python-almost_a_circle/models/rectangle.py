@@ -9,6 +9,8 @@
 """
 
 from models.base import Base
+
+
 class Rectangle(Base):
     """ class rectangle that inherits from Base """
 
@@ -23,33 +25,24 @@ class Rectangle(Base):
         """
 
         if not isinstance(width, int):
-            if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = width
-        
+        elif width <= 0:
+            raise ValueError("width must be > 0")
+
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = height
+        elif height <= 0:
+            raise ValueError("height must be > 0")
 
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
         elif x < 0:
             raise ValueError("x must be >= 0")
-        else:
-            self.__x = x
 
         if not isinstance(y, int):
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         elif y < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self.__y = y
+            raise ValueError("y must be >= 0")
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -64,8 +57,8 @@ class Rectangle(Base):
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
         else:
             self.__width = value
 
@@ -77,8 +70,8 @@ class Rectangle(Base):
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
         else:
             self.__height = value
 
