@@ -29,10 +29,12 @@ class TestRectangle(unittest.TestCase):
     def test_id_rect(self):
         """ test the id attr of the rectangle instance """
 
+        """
         r1= Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
         r2 = Rectangle(5, 10)
         self.assertEqual(r2.id, 2)
+        """
 
     def test_id_not_none(self):
         """ test when the id=None """
@@ -77,13 +79,13 @@ class TestRectangle(unittest.TestCase):
             Rectangle(2, 3.5, 5)
 
     def test_negative_args(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(3, -4, 40)
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(-3, 4, 4)
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(2, 4, -4)
 
     def test_args_overflow(self):

@@ -8,7 +8,7 @@
 
 """
 
-from models.base import Base
+from .base import Base
 
 
 class Rectangle(Base):
@@ -43,6 +43,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         elif y < 0:
             raise ValueError("y must be >= 0")
+        
         super().__init__(id)
         self.__width = width
         self.__height = height

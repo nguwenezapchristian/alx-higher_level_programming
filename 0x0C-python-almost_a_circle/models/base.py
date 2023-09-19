@@ -14,6 +14,10 @@ class Base():
     """ this is the Base class """
     __nb_objects = 0
 
+    @classmethod
+    def reset_nb_objects(cls):
+        cls.__nb_objects = 0
+
     def __init__(self, id=None):
         """ contructor for the base class
 
