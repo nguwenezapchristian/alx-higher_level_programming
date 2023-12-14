@@ -1,1 +1,1 @@
-This repo. contains the directories for python projects
+readme for 0x0E-SQL_more_queries
