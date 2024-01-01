@@ -3,6 +3,7 @@
 Module that inherits from list
 """
 
+
 class MyList(list):
     """ MyList class which inherits from list """
     def __init__(self, *args):
@@ -12,7 +13,7 @@ class MyList(list):
                 raise TypeError("Accepts one list argument")
             if not isinstance(args[0], list):
                 raise TypeError("Must be a list")
-    
+
     def print_sorted(self):
         """ prints the list sorted in ascending """
         sortedList = self.copy()
