@@ -3,4 +3,4 @@
 module.exports.add = function (a, b) {
   const sum = a + b;
   return sum;
-}
+};
