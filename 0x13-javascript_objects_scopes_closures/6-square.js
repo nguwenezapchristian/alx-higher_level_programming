@@ -5,17 +5,19 @@ const Rectangle = require('./4-rectangle');
 // a class Square that defines a square and
 // inherits from class Rectangle
 class Square extends Rectangle {
-  constructor (size) {
+  constructor(size) {
     super(size, size);
   }
 
-  charPrint (c = 'X') {
-    for (let i = 0; i < this.height; i++) {
-      let row = '';
-      for (let b = 0; b < this.width; b++) {
-        row += c;
+  charPrint(c) {
+    if (c === undefined) {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.height));
       }
-      console.log(row);
+    } else {
+      for (let i = 0; i < this.height; i++) {
+        console.log(c.repeat(this.height));
+      }
     }
   }
 }
