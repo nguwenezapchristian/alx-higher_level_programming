@@ -28,5 +28,7 @@ if __name__ == "__main__":
         except IndexError:
             print("MySQL Error: %s" % str(e))
     finally:
+        if 'cur' in locals() and cur is not None:
+            cur.close()
         if 'db' in locals() and db is not None:
             db.close()
