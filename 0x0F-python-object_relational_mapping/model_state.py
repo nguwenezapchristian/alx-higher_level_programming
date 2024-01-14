@@ -3,10 +3,10 @@
 Module which creates a table
 in mysql
 """
-from sqlalchemy import Column, integer, String, MetaData
-from sqlalchemy.orm import Declarative_base
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.orm import declarative_base
 my_metadata = MetaData()
-Base = Declarative_base(metadata=my_metadata)
+Base = declarative_base(metadata=my_metadata)
 
 
 class State(Base):
