@@ -1,0 +1,48 @@
+========================
+Doctest for 1-my_list.py
+========================
+
+This doctest contain one class and function, which are called
+``MyList()`` and ``print_sorted()``
+
+>>> MyList = __import__('1-my_list').MyList
+
+Test MyList argument
+====================
+
+``MyList()`` can be initialized with no argument.
+
+::
+
+	>>> new_list = MyList()
+	>>>
+
+it can be initialized with a list.
+
+::
+
+	>>> new_list = MyList([1,2,2,4])
+	>>>
+
+it only accepts list argument.
+
+::
+
+	>>> new_list = MyList("Hello")
+	Traceback (most recent call last):
+		...
+	TypeError: Must be a list
+
+	>>> ll_list = MyList({1, 2, 5})
+	Traceback (most recent call last):
+		...
+	TypeError: Must be a list
+
+it only accepts one argument.
+
+::
+
+	>>> l1_list = MyList([1,2,3], [2,9,5])
+	Traceback (most recent call last):
+		...
+	TypeError: Accepts one list argument
