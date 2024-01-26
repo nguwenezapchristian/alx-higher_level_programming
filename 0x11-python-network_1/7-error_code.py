@@ -10,7 +10,8 @@ import sys
 if __name__ == "__main__":
     try:
         resp = requests.get(sys.argv[1])
-        print(resp.text)
     except requests.exception.RequestException as error:
         if error.status >= 400:
             print(f"Error code: {error.status}")
+        else:
+            print(resp.text)
