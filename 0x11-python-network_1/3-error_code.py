@@ -15,4 +15,4 @@ if __name__ == "__main__":
             page = response.read().decode('ascii')
             print(page)
     except urllib.error.HTTPError as status_code:
-        print(f"Error code: {status_code}")
+        print(f"Error code: {status_code.status}")
