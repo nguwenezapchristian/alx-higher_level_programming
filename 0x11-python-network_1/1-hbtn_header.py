@@ -8,10 +8,11 @@ import urllib.request
 import sys
 
 
-req = urllib.request.Request(sys.argv[1])
-with urllib.request.urlopen(req) as response:
-    headers = response.getheaders()
+if __name__ == "__main__":
+    req = urllib.request.Request(sys.argv[1])
+    with urllib.request.urlopen(req) as response:
+        headers = response.getheaders()
 
-for header in headers:
-    if header[0] == 'X-Request-Id':
-        print(header[1])
+    for header in headers:
+        if header[0] == 'X-Request-Id':
+            print(header[1])
