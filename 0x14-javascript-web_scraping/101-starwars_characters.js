@@ -1,51 +1,54 @@
 #!/usr/bin/node
 // a script that prints all characters of a Star Wars movie
 
+const { rejects } = require('assert');
+const { resolve } = require('path');
 const request = require('request');
 async function getMovie () {
   const movieId = process.argv[2];
   const requestURL = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
-  request.get(requestURL, (error, response, body) => {
-    if (error) {
-      console.error('Error fetching movie:', error);
-      return;
-    }
-
-    if (response.statusCode !== 200) {
-      console.error('Status code:', response.statusCode);
-      return;
-    }
-    const movie = JSON.parse(body);
-    // console.log(movie["characters"]);
-    const characters = movie.characters;
-    // sorting characters
-    // const extractId = url => {
-    //   const parts = url.split('/');
-    //   return parseInt(parts[parts.length - 2]);
-    // };
-    // characters.sort((a, b) => extractId(a) - extractId(b));
-
-    for (let index = 0; index < characters.length; index++) {
-      const peopleLink = characters[index];
-      // console.log(peopleLink);s
-      getCharacterName(peopleLink);
-    }
-  });
+  await new Promise((resolve, reject) => {
+    request.get(requestURL, async (error, response, body) => {
+      if (error) {
+        console.error('Error fetching movie:', error);
+        reject(error);
+      }
+  
+      if (response.statusCode !== 200) {
+        console.error('Status code:', response.statusCode);
+        reject(response.statusCode);
+      }
+      const movie = JSON.parse(body);
+      // console.log(movie["characters"]);
+      const characters = movie.characters;
+      // console.log(characters);
+  
+      for (let index = 0; index < characters.length; index++) {
+        const peopleLink = characters[index];
+        // console.log(peopleLink);
+        await getCharacterName(peopleLink);
+      }
+      resolve();
+    });
+  })
 }
 
 async function getCharacterName (peopleLink) {
-  request.get(peopleLink, (error, response, body) => {
-    if (error) {
-      console.error('Error fetching people:', error);
-      return;
-    }
+  return new Promise((resolve, reject) => {
+    request.get(peopleLink, (error, response, body) => {
+      if (error) {
+        console.error('Error fetching people:', error);
+        reject(error);
+      }
 
-    if (response.statusCode !== 200) {
-      console.error('Status code:', response.statusCode);
-      return;
-    }
-    const person = JSON.parse(body);
-    console.log(person.name);
+      if (response.statusCode !== 200) {
+        console.error('Status code:', response.statusCode);
+        reject(response.statusCode);
+      }
+      const person = JSON.parse(body);
+      console.log(person.name);
+      resolve();
+    });
   });
 }
 getMovie();
