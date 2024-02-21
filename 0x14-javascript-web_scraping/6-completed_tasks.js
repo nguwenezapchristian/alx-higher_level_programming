@@ -15,7 +15,7 @@ async function tasksCompleted () {
         reject(response.statusCode);
       }
       const todos = JSON.parse(body);
-    //   console.log(todos[todos.length - 1].userId);
+      //   console.log(todos[todos.length - 1].userId);
       const todosDone = {};
       for (let id = 1; id <= todos[todos.length - 1].userId; id++) {
         let taskDone = 0;
