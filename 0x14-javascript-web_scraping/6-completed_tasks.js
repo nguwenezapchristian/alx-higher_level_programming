@@ -30,12 +30,13 @@ async function tasksCompleted () {
         taskDone = 0;
       }
       // Only print users with completed task
+      const onlyTodosDone = {};
       for (const key in todosDone) {
-        if (todosDone[key] === 0) {
-          delete todosDone[key];
+        if (todosDone[key] !== 0) {
+          onlyTodosDone[key] = todosDone[key];
         }
       }
-      console.log(todosDone);
+      console.log(onlyTodosDone);
       resolve();
     });
   });
