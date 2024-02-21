@@ -18,6 +18,13 @@ async function getMovie () {
     const movie = JSON.parse(body);
     // console.log(movie["characters"]);
     const characters = movie.characters;
+    // sorting characters
+    const extractId = url => {
+      const parts = url.split("/");
+      return parseInt(parts[parts.length - 2]);
+    };
+    characters.sort((a, b) => extractId(a) - extractId(b));
+
     for (let index = 0; index < characters.length; index++) {
       const peopleLink = characters[index];
       // console.log(peopleLink);s
