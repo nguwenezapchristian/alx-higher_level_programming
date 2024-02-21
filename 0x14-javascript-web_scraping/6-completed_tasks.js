@@ -26,9 +26,14 @@ async function tasksCompleted () {
           }
         }
         todosDone[id] = taskDone;
-
         // console.log(`${id}: ${taskDone}`);
         taskDone = 0;
+      }
+      // Only print users with completed task
+      for (const key in todosDone) {
+        if (todosDone[key] === 0) {
+            delete todosDone[key];
+        }
       }
       console.log(todosDone);
       resolve();
