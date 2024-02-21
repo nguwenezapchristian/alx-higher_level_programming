@@ -32,7 +32,7 @@ async function tasksCompleted () {
       // Only print users with completed task
       for (const key in todosDone) {
         if (todosDone[key] === 0) {
-            delete todosDone[key];
+          delete todosDone[key];
         }
       }
       console.log(todosDone);
