@@ -1,8 +1,6 @@
 #!/usr/bin/node
 // a script that prints all characters of a Star Wars movie
 
-const { rejects } = require('assert');
-const { resolve } = require('path');
 const request = require('request');
 async function getMovie () {
   const movieId = process.argv[2];
@@ -13,7 +11,7 @@ async function getMovie () {
         console.error('Error fetching movie:', error);
         reject(error);
       }
-  
+
       if (response.statusCode !== 200) {
         console.error('Status code:', response.statusCode);
         reject(response.statusCode);
@@ -22,7 +20,7 @@ async function getMovie () {
       // console.log(movie["characters"]);
       const characters = movie.characters;
       // console.log(characters);
-  
+
       for (let index = 0; index < characters.length; index++) {
         const peopleLink = characters[index];
         // console.log(peopleLink);
@@ -30,7 +28,7 @@ async function getMovie () {
       }
       resolve();
     });
-  })
+  });
 }
 
 async function getCharacterName (peopleLink) {
