@@ -3,7 +3,7 @@
 // the episode number matches a given integer
 
 const request = require('request');
-async function getMovieTitle() {
+async function getMovieTitle () {
   const movieId = process.argv[2];
   const requestURL = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
   request.get(requestURL, (error, response, body) => {
