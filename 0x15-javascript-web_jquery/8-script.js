@@ -1,4 +1,5 @@
-// a JavaScript script that fetches the character name from this URL
+//  a JavaScript script that fetches and lists the title
+// for all movies by using this URL
 const $listMovie = $('#list_movies');
 $.ajax({
   type: 'GET',
