@@ -4,10 +4,9 @@
 const $header = $('header');
 const $divClick = $('#toggle_header');
 $divClick.on('click', () => {
-    if ($header.attr('class') === 'green') {
-        $header.attr('class', 'red');
-    } else {
-        $header.attr('class', 'green');
-    }
-    
+  if ($header.attr('class') === 'green') {
+    $header.attr('class', 'red');
+  } else {
+    $header.attr('class', 'green');
+  }
 });

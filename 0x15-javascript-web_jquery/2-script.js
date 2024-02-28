@@ -4,6 +4,6 @@
 const $header = $('header');
 const $divClick = $('#red_header');
 $divClick.on('click', () => {
-    // console.log('div  clicked');
-    $header.css('color', '#FF0000');
+  // console.log('div  clicked');
+  $header.css('color', '#FF0000');
 });

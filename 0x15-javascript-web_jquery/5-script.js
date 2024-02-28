@@ -4,7 +4,7 @@
 const $addItem = $('#add_item');
 const $list = $('.my_list');
 $addItem.on('click', () => {
-    const $item = $('<li>');
-    $item.text('Item');
-    $list.append($item);
+  const $item = $('<li>');
+  $item.text('Item');
+  $list.append($item);
 });

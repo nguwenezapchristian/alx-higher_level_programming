@@ -4,5 +4,5 @@
 const $header = $('header');
 const $divClick = $('#red_header');
 $divClick.on('click', () => {
-    $header.addClass('red');
+  $header.addClass('red');
 });
